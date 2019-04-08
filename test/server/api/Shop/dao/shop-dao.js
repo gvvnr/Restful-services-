@@ -24,7 +24,6 @@ export class ShopDao {
       })
         .catch(error => {
           reject(error)
-
         })
     })
 
@@ -56,7 +55,6 @@ export class ShopDao {
       models.Shop
         .destroy({
           where: {id: parseInt(_id)}
-
         })
         .then(body => {
           resolve(body)
