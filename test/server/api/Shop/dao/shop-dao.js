@@ -75,7 +75,7 @@ export class ShopDao {
           {where: {id: _id}, returning: true, plain: true})
         .then((projects) => {
           resolve(projects)
-        }, (error) => {
+        },(error) => {
           reject(error)
         })
     })
