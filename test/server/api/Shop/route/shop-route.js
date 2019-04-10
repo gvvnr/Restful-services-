@@ -4,11 +4,12 @@ export default class ShopRoutes {
   static init(router) {
     console.log('getting');
     router
-      .route('/routing')
+      .route('/shop')
       .post(ShopController.createNew)
+      //.patch(ShopController.patch);
       .get(ShopController.getAll);
     router
-      .route('/routing/:id')
+      .route('/shop/:id')
       .get(ShopController.getId)
       .delete(ShopController.deleteById)
       .put(ShopController.UpdateById);

@@ -30,6 +30,7 @@ export class ShopDao {
   }
 
   static getById(_id) {
+
     return new Promise((resolve, reject) => {
       console.log('getById Dao', _id);
       models.Shop
@@ -80,4 +81,13 @@ export class ShopDao {
         })
     })
   }
+
 }
+/*static patchData(request){
+  return new Promise((resolve, reject)=>{
+    models.Shop.patch({
+
+    })
+
+  })
+}*/

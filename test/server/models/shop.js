@@ -6,9 +6,17 @@ module.exports = (sequelize, DataTypes) => {
   Shop.associate = function(models) {
     // associations can be defined here
     Shop.hasMany(models.coffee,{
-      foreignKey:'shopId',
+      foreignKey:'shop_Id',
       sourceKey:'id'
     });
   };
   return Shop;
 };
+/*as:'Details',
+      foreignKey:{
+        name:"shopId",
+        sourceKey:"id"
+      }
+
+
+*/

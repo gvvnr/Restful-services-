@@ -17,19 +17,25 @@ export class CoffeeDao {
   static createNew(request) {
     return new Promise((resolve, reject) => {
       console.log('enterd into createnew method in dao');
-      models.Shop.create({
-        name: request.name
-      }).then(body => {
-        resolve(body)
-      })
+      models.coffee.create({
+          name: request.name,
+          type:request.type1,
+          Shop:[
+            {
+              name:request.name1
+            }
+          ]
+        },{
+          include:[models.Shop]
+        }
+      )
+        .then(body => {
+          resolve(body)
+        })
         .catch(error => {
           reject(error)
         })
     })
   }
-
-
-
-
 
 }

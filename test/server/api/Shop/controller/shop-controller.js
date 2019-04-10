@@ -1,7 +1,9 @@
 import {ShopDao} from "../dao/shop-dao";
 
 export default class ShopController {
+
   static getAll(req, res) {
+    console.log('you are in shop');
     ShopDao.getAll()
       .then(ShopDao => {
         res.status(201).json(ShopDao);
@@ -23,7 +25,8 @@ export default class ShopController {
       });
   }
   static getId(req,res){
-    let id=req.params.id
+    let id=req.params.id;
+    console.log('id is ->',id);
     ShopDao.getById(id).then(ShopDao =>{
       res.send(ShopDao);
     })
@@ -60,4 +63,13 @@ export default class ShopController {
       });
   }
 
+
+
+
+
 }
+
+/*static patch(req,res){
+    const _reqBody=req.body;
+    ShopDao.patchData(_reqBody);
+  }*/
